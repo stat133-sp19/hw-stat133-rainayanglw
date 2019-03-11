@@ -9,7 +9,16 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#Effective Shooting Percentage 
+While the Golden State Warriors was clearly the best team in the NBA during 2015-2016 season, 2016 was't the best year for them. After the Cleveland Cavaliers' Game 6 victory, it felt like that the Warriors might have used up their talents. However, it is not breaking news that the Warriors can shoot. They often set the all-time record for effective field-goal percentage, making more than half their shots. This is a visual report on the shot data of the top Warriors players: Curry, Durant, Iguodala, Green, Thompson. It combines shot charts with summaries and visualizations to produce a straightforward view of each player's performance.
+
+![](warriors.png)
+# background
+
+Stephen Curry is the greatest shooter in NBA history. This is evident in his percentages. According to Nylon Calculus's breaking down of Curry's shots from 2011-2016, Curry averaged 1.36 points per shot from 0-3 feet (accounting for free throws). Even from 24-28 feet, Curry averaged 1.37 points per shot. From 28-30 feet, Curry averaged 1.35 points per shot. In comparison, the Golden State Warrior, having the top offense in the league, average 1.14 points per possession (accounting for turnovers and offensive rebounds). It's truly unbelievable that Curry is as efficient when pulling up from six feet beyond the arc as doing layups!
+
+Klay Thompson, on the other hand, might not be the most versatile player around, but he's achieving a 42.4 percent of his triples, a rate Curry didn't even reach in the season.
+
+#Effective Shooting Percentage Data
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 shots_data <- readr::read_csv("../data/shots-data.csv")
 ```
