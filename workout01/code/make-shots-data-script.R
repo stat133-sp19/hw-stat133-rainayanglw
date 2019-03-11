@@ -9,41 +9,21 @@
 ## Output: summary of each player CSV, final combined CSV, summary of the combined CSV
 ## ------
 
-curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE, 
-                  colClasses = c("character","character","integer","integer",
-                                 "integer","integer", "factor","character",
-                                 "character","integer","character",
-                                 "integer","integer"),
-                  col.names = c('Stephen Curry'),
-                  stringsAsFactors = FALSE)
-iguodala <- read.csv("../data/andre-iguodala.csv", stringsAsFactors = FALSE,
-                     colClasses = c("character","character","integer","integer",
-                                    "integer","integer", "factor","character",
-                                    "character","integer","character",
-                                    "integer","integer"),
-                     col.names = c('Andre Iguodala'),
-                     stringsAsFactors = FALSE)
-durant <- read.csv("../data/kevin-durant.csv", stringsAsFactors = FALSE,
-                   colClasses = c("character","character","integer","integer",
-                                  "integer","integer", "factor","character",
-                                  "character","integer","character",
-                                  "integer","integer"),
-                   col.names = c('Kevon Durant'),
-                   stringsAsFactors = FALSE)
-thompson <- read.csv("../data/klay-thompson.csv", stringsAsFactors = FALSE,
-                     colClasses = c("character","character","integer","integer",
-                                    "integer","integer", "factor","character",
-                                    "character","integer","character",
-                                    "integer","integer"), 
-                     col.names = c('Klay Thompson'),
-                     stringsAsFactors = FALSE)
-green <- read.csv("../data/draymond-green.csv", stringsAsFactors = FALSE,
-                  colClasses = c("character","character","integer","integer",
-                                 "integer","integer", "factor","character",
-                                 "character","integer","character",
-                                 "integer","integer"), 
-                  col.names = c('Graymond Green'),
-                  stringsAsFactors = FALSE)
+setwd("~/desktop/hw-stat133/workout01/code")
+
+curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE)
+iguodala <- read.csv('../data/andre-iguodala.csv', stringsAsFactors = FALSE)
+green <- read.csv("../data/draymond-green.csv", stringsAsFactors = FALSE)
+durant <- read.csv("../data/kevin-durant.csv", stringsAsFactors = FALSE)
+thompson <- read.csv("../data/klay-thompson.csv", stringsAsFactors = FALSE)
+
+curry$name <- rep("Stephen Curry", length(curry$team_name))
+iguodala$name <- rep("Andre Iguodala", length(iguodala$team_name))
+green$name <- rep("Draymond Green", length(green$team_name))
+durant$name <- rep("Kevin Durant", length(durant$team_name))
+thompson$name <- rep("Klay Thompson", length(thompson$team_name))
+
+
 
 curry$shot_made_flag[curry$shot_made_flag == "y"] = "shot_yes"
 curry$shot_made_flag[curry$shot_made_flag == "n"] = "shot_no"
@@ -91,7 +71,7 @@ shots_data <- as.data.frame(shots_data_og)
 write.csv(shots_data, "../data/shots-data.csv")
 
 sink("../output/shots-data-summary.txt")
-summary(shots_data_df)
+summary(shots_data)
 sink()
 
 
