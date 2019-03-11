@@ -1,12 +1,12 @@
 ## ------
-## Project: workout01 for stat133
+## Title: making-shots-data-script
 ##
-## Script purpose: Script to combine five warriors player shots into one data file. 
-##Input is CSV for each player while output is a summary of a final combined CSV.
+## Description: Script to combine five warriors player shots into one data file. 
 ##
-## Date: 2018-03-08
+## Input: CSV for each player, 5 in total
 ##
-## Author: Raina Yang
+##
+## Output: summary of each player CSV, final combined CSV, summary of the combined CSV
 ## ------
 
 curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE, 
