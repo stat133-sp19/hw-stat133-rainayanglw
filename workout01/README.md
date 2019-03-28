@@ -10,6 +10,9 @@ Private Repository for HW assignments of Stat 133 (Spring 2019)
 
 -----
 
+This homework is about creating shots charts for 5 NBA players, analyze their performances, and write a clear and accurate report on the data collected and analyzed. Outputs include various shot charts and a written narrative.
+
+
 ## Assignments
 
 - [Demo](demo)
